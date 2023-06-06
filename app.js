@@ -3,12 +3,14 @@ const listContainer = document.getElementById("listContainer");
 
 
 function addTask() {
-  if(inputBox.value === '') {
+  if(inputBox.value === ''){
       alert('Votre tache ne peut pas être vide.');
   } else {
       let li = document.createElement('li');
       li.innerHTML = inputBox.value;
       listContainer.appendChild(li);
+      console.log('test');
+
   }};
 
 // const button = document.querySelector('button');
@@ -17,4 +19,3 @@ function addTask() {
 
 
 // });
-console.log('test');
