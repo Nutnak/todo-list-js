@@ -1,3 +1,8 @@
 ul li span:hover {
   color: red;
 }
+
+ul li.checked {
+  color: red;
+  text-decoration: line-through;
+}
