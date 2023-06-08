@@ -22,34 +22,33 @@ function addTask() {
       // Ensuite j'attache la span à li grâce à appendChild.
       li.appendChild(span);
   }
-  // Je sors du if statement, une fois que je clique sur le bouton, le code juste après remet la box sans texte. 
+  // Je sors du if statement, une fois que je clique sur le bouton, le code juste après remet la box sans texte.
   inputBox.value = "";
+  // La fonction saveData qui est definie plus bas permet de sauvegarder les données.
   saveData();
 };
-
+// Ensuite j'ajoute un EventListener sur la liste. La fonction passée à l'écouteur d'événements accepte un argument "e" qui représente l'événement de clic lui-même.
 listContainer.addEventListener('click', function(e) {
+  // Si je click sur un élément qui est un "li", alors le code ajoute la class "checked" à mon "li", dans le CSS, "checked" correspond au CSS qui va barrer le texte.
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
     saveData();
-
+  // Sinon, si je click sur un élément qui est un "span" (donc le x) alors il va supprimer l'élément parent de span qui est un "li" (donc la task).
   } else if (e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
     saveData();
   }
-}, false);
-
+});
+// Ici on créer une fonction saveData pour enregistrer les taches.
 function saveData() {
+  // J'utilise localStorage.setItem('le nom que je veux donner à la BDD', ce que je souhaite cibler, ici en l'occurence c'est la liste des tasks.)
   localStorage.setItem("data", listContainer.innerHTML);
 }
-
+// Ici je fais une fonction pour récupérer la data.
 function getData() {
+  // J'utilise localStorage.getItem('nom de ma BDD') est je lui dit que les informations doivent aller dans la liste.
   listContainer.innerHTML = localStorage.getItem('data');
 }
 getData();
 
-// const button = document.querySelector('button');
-// button.addEventListener("click", function() {
 
-
-
-// });
