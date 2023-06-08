@@ -1,3 +1,22 @@
+body {
+  margin-left: 24%;
+  margin-top: 6%;
+
+}
+.main-container {
+  background-color: brown;
+  width: 70%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+#input-box {
+  background-color: aqua;
+  border-style: none;
+  border-radius: 10px;
+}
+
 ul li span:hover {
   color: red;
 }
